@@ -15,10 +15,46 @@ vegetales = as.vector(mercado$Vegetales)
 
 # PREGUNTA 1
 
+# Filtramos las variables de vegetales
 consumo_cebolla = consumo [vegetales == "Cebolla"]
 consumo_papa = consumo [vegetales == "Papa"]
 consumo_lechuga = consumo [vegetales == "Lechuga"]
 consumo_tomate = consumo [vegetales == "Tomate"]
+
+# CALCULO DE LA MODA
+
+# Funcion para calcular la moda dado un vector
+moda <- function(datos){
+  tab <- table(datos)
+  return( as.numeric( names(tab)[tab == max(tab)] ) )
+}
+
+# Calculamos la moda de cada verdura
+moda_cebolla = moda(consumo_cebolla)
+moda_papa = moda(consumo_papas)
+moda_lechuga = moda(consumo_lechuga)
+moda_tomate = moda(consumo_tomate)
+
+# Determinamos la varianza
+var_cebolla = var(consumo_cebolla)
+var_papa = var(consumo_papa)
+var_lechuga = var(consumo_lechuga)
+var_tomate = var(consumo_tomate)
+
+# Determinamos la desviacion estandar
+sd_cebolla = sd(consumo_cebolla)
+sd_papa = sd(consumo_papa)
+sd_lechuga = sd(consumo_lechuga)
+sd_tomate = sd(consumo_tomate)
+
+# Usamos la funcion summary para obtener los datos para el analisis descriptivo
+
+summary_cebolla = summary(consumo_cebolla)
+summary_papa = summary(consumo_papa)
+summary_lechuga = summary(consumo_lechuga)
+summary_tomate = summary(consumo_tomate)
+
+# Graficamos con graficos de caja
 
 boxplot(consumo_cebolla, consumo_papa, consumo_lechuga, consumo_tomate,
         
