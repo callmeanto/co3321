@@ -1,10 +1,34 @@
+# Laboratorio 1
+# Alumnos: Arturo Yepez 15-11551, Antonella Requena 15-11196
+
+# LECTURA DE DATOS
+# Lectura de Tabla
 mercado = read.table("Mercado.txt", header = T)
+
 # Se extraen las secciones de interes de la tabla
 genero = as.vector(mercado$Sexo)
 carnico = as.vector(mercado$Carnico)
 edad = as.vector(mercado$Edad)
 fruta = as.vector(mercado$Fruta)
 consumo = as.vector(mercado$Consumo)
+vegetales = as.vector(mercado$Vegetales)
+
+# PREGUNTA 1
+
+consumo_cebolla = consumo [vegetales == "Cebolla"]
+consumo_papa = consumo [vegetales == "Papa"]
+consumo_lechuga = consumo [vegetales == "Lechuga"]
+consumo_tomate = consumo [vegetales == "Tomate"]
+
+boxplot(consumo_cebolla, consumo_papa, consumo_lechuga, consumo_tomate,
+        
+        main = "Vegetales según Consumo",
+        ylab = "Consumo",
+        xlab = "Vegetales",
+        
+        names = c("Cebolla", "Papa", "Lechuga", "Tomate"),
+        col = c("white", "yellow", "green", "red"))
+
 
 # PREGUNTA 2
 
