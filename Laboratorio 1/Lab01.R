@@ -1,0 +1,1 @@
+mercado = read.table("Mercado.txt", header = T)
