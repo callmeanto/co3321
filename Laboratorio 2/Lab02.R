@@ -38,6 +38,15 @@ int_conf3 = intervalo(carne_guisar3, 0.01)
 
 ### PREGUNTA 4
 
+# Creamos una lista con los precios de carne de la Zona 2
+carne2 = as.vector(mercado$Zona2)
+
+# Creamos una lista con los precios de carne de la Zona 4
+carne4 = as.vector(mercado$Zona4)
+
+# Ahora sacamos el intervalo de confianza 
+int_conf_dif = t.test(carne2, carne4, conf.level = 0.99)
+
 
 ### PREGUNTA 5
 
