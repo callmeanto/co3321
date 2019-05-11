@@ -66,7 +66,6 @@ Q2=c(quantile(carne_guisar1,0.50),quantile(carne_guisar2,0.50),quantile(carne_gu
 DesviacionEstandar=c(sd(carne_guisar1),sd(carne_guisar2),sd(carne_guisar3),sd(carne_guisar4)))
 
 
-
 ### PREGUNTA 2
 
 # Creamos una lista con los precios solos de la carne de guisar de la zona 1
@@ -122,7 +121,7 @@ carne2 = as.vector(mercado$Zona2)
 carne4 = as.vector(mercado$Zona4)
 
 # Ahora sacamos el intervalo de confianza 
-int_conf_dif = t.test(carne2, carne4, conf.level = 0.99)
+int_conf_dif = t.test(carne2, carne4)
 
 
 ### PREGUNTA 5
@@ -135,7 +134,7 @@ max_carne3 = carne3 [carne3 >= 300]
 len_max_carne3 = length(max_carne3)
 
 # Ahora, calculamos el intervalo de confianza de para proporciones
-int_conf3_propor = binom.test(len_max_carne3, len_carne3, conf.level = 0.99)
+int_conf3_propor = binom.test(len_max_carne3, len_carne3, conf.level = 0.9)
 
 
 ### PREGUNTA 6
