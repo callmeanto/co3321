@@ -6,29 +6,44 @@
 # Como nos piden establacer una relación entre nivel socioeconomico y la zona donde vive
 # utilizamos Tablas de Contingencia
 
+# Número de columnas
 c = 2
+
+# Número de categorias
 r = 3
 
+# Datos de los ambientes que tenemos
 rural = c(249, 80, 2)
 urbano = c(139, 20, 15)
 
+# Agrupación de esos datos
 matriz = cbind(rural, urbano)
 
+# Hacemos chisq.test para sacar los resultados de la tabla de contingencia
 chisq.test(matriz)
 
 ### PREGUNTA 2
 
 # Debemos realizar una prueba para proporciones
 
+# Nivel de significancia
 alpha = 0.05
+
+# Cantidad total de datos
 n = 1000
+
+# Número de categorias
+
 k = 4
 r = 0
 
+# Probabilidad con la que queremos usar H0
 p = c(1/4, 1/4, 1/4, 1/4)
 
+# Datos proporcionados según la categoria
 fi = c(294, 276, 238, 192)
 
+# Hacemos prop.test para verificar el resultado
 prop.test(fi, c(1000,1000,1000,1000), p)
 
 ### PREGUNTA 3
