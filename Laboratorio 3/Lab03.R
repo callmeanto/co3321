@@ -76,8 +76,5 @@ pi = pnorm(lu, prom, sd) - pnorm (ll, prom, sd)
 # Calculamos nuestro estadistico Chi-cuadrado
 chi2_est = sum((fi-n*pi)^2/(n*pi))
 
-# Determinamos la region de rechazo
-chi2_rr = qchisq(1-alpha, k-1-r)
-
 # Como no se nos da el nivel de significancia alpha, calculamos el p-valor
-p-valor = 1 - pchisq(chi2_obs, n-1-2)
+p-valor = 1 - pchisq(chi2_est, k-1-r)
