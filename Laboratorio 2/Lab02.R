@@ -61,7 +61,7 @@ boxplot(carne_guisar4, ylab="Precios", xlab="Zona 4", col=c("green"))
 
 # Tabla
 
-M = data.frame(stringsAsFactors = FALSE, Zonas=c('Zona1','Zona2','Zona3','Zona4'), Minimos =c(min(carne_guisar1),min(carne_guisar2),min(carne_guisar3),min(carne_guisar4)), Q1 =c(quantile(carne_guisar1,0.25),quantile(carne_guisar2,0.25),quantile(carne_guisar3,0.25),quantile(carne_guisar4,0.25)),
+M = data.frame(stringsAsFactors = FALSE, Minimos =c(min(carne_guisar1),min(carne_guisar2),min(carne_guisar3),min(carne_guisar4)), Q1 =c(quantile(carne_guisar1,0.25),quantile(carne_guisar2,0.25),quantile(carne_guisar3,0.25),quantile(carne_guisar4,0.25)),
 Q2=c(quantile(carne_guisar1,0.50),quantile(carne_guisar2,0.50),quantile(carne_guisar3,0.50),quantile(carne_guisar4,0.50)),Q3=c(quantile(carne_guisar1,0.75),quantile(carne_guisar2,0.75),quantile(carne_guisar3,0.75),quantile(carne_guisar4,0.75)),Media=c(mean(carne_guisar1),mean(carne_guisar2),mean(carne_guisar3),mean(carne_guisar4)),
 DesviacionEstandar=c(sd(carne_guisar1),sd(carne_guisar2),sd(carne_guisar3),sd(carne_guisar4)))
 
@@ -110,7 +110,7 @@ var.test(carne_guisar2, carne_guisar4,conf.level = 0.99)
 # nivel de confianza de 99%
 
 # Ahora calculamos el intervalo de confianza de las medias
-t.test (carne_guisar2, carne_guisar4, var.equal = T, conf.level = 0.99 )
+t.test (carne_guisar2, carne_guisar4, var.equal = T, conf.level = 0.99,alternative = "greater" )
 
 
 ### PREGUNTA 4
