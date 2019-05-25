@@ -18,3 +18,16 @@ chisq.test(matriz)
 
 ### PREGUNTA 2
 
+# Debemos realizar una prueba para proporciones
+
+alpha = 0.05
+n = 1000
+k = 4
+r = 0
+
+p = c(1/4, 1/4, 1/4, 1/4)
+
+fi = c(294, 276, 238, 192)
+
+prop.test(fi, c(1000,1000,1000,1000), p)
+
