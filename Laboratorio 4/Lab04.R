@@ -117,3 +117,36 @@ graf_matriz_cor = pairs( edo.77, labels = c("Populación", "Ingresos", "Analfabe
 matriz_cor = cor(edo.77)
 
 ### PREGUNTA 3
+
+
+
+### PREGUNTA 5
+# Realizamos un ANOVA
+
+
+# Almacenamos el valor que arrojo cada muestra para los respectivos agentes quimicos
+AQ1 = c(73,68,74,71,67)
+AQ2 = c(73,67,75,72,70)
+AQ3 = c(75,68,78,73,68)
+AQ4 = c(73,71,75,75,69)
+
+# Cargamos todos los valores en un mismo vector
+datos = c(AQ1,AQ2,AQ3,AQ4)
+
+# Almacenamos los grados de libertad
+bloques <- gl(5,4)
+
+agente.quimico <- factor(rep(1:4,5))
+
+# Creamos la tabla
+xtabs(datos ~ agente.quimico + bloques)
+
+# Creamos el modelo
+mod.lm = lm(datos ~ agente.quimico + bloques)
+
+# Usamos el metodo anova para obtener de una vez todos los valores requeridos
+anova(mod.lm)
+
+
+
+
