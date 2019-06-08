@@ -133,6 +133,7 @@ model4 = lm(Life.Exp ~ Income + Murder + Hs.Grad
 model5 = lm(Life.Exp ~ Murder + Hs.Grad + Frost, data = edo.77)
 
 ### PREGUNTA 4
+# Como el modelo que mejor ajusta es el modelo 5, hacemos un analisis de residuos a este modelo
 
 
 ### PREGUNTA 5
