@@ -135,6 +135,8 @@ model5 = lm(Life.Exp ~ Murder + Hs.Grad + Frost, data = edo.77)
 ### PREGUNTA 4
 # Como el modelo que mejor ajusta es el modelo 5, hacemos un analisis de residuos a este modelo
 
+plot(model5)
+
 
 ### PREGUNTA 5
 # Realizamos un ANOVA
