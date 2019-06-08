@@ -12,8 +12,6 @@ edo.77 = as.data.frame(state.x77)
 names(edo.77)[4] = "Life.Exp"
 names(edo.77)[6] = "Hs.Grad"
 
-# Se extraen las secciones de interes del data frame
-
 
 ### PREGUNTA 1
 
@@ -108,16 +106,33 @@ boxplot(edo.77[8],
         
         col = "brown")
 
+
 ### PREGUNTA 2
 
-graf_matriz_cor = pairs( edo.77, labels = c("Populación", "Ingresos", "Analfabetismo", "Esperanzas de Vida",
-                          "Asesinato", "Graduaos de High School", "Temperatura", 
-                          "Area de Tierra") )
+graf_matriz_cor = pairs( edo.77, labels = c("Populación", "Ingresos", "Analfabetismo", 
+                          "Esperanzas de Vida", "Asesinato", "Graduaos de High School", 
+                          "Temperatura", "Area de Tierra") )
 
 matriz_cor = cor(edo.77)
 
+
 ### PREGUNTA 3
 
+model1 = lm(Life.Exp ~ Population + Income + Illiteracy + Murder + Hs.Grad 
+            + Frost+ Area, data = edo.77)
+
+model2 = lm(Life.Exp ~ Population + Income + Illiteracy + Murder + Hs.Grad 
+            + Frost, data = edo.77)
+
+model3 = lm(Life.Exp ~ Population + Income + Murder + Hs.Grad 
+            + Frost, data = edo.77)
+
+model4 = lm(Life.Exp ~ Income + Murder + Hs.Grad 
+            + Frost, data = edo.77)
+
+model5 = lm(Life.Exp ~ Murder + Hs.Grad + Frost, data = edo.77)
+
+### PREGUNTA 4
 
 
 ### PREGUNTA 5
@@ -146,7 +161,3 @@ mod.lm = lm(datos ~ agente.quimico + bloques)
 
 # Usamos el metodo anova para obtener de una vez todos los valores requeridos
 anova(mod.lm)
-
-
-
-
